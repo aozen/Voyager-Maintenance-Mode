@@ -1,0 +1,1127 @@
+/*
+Template Name: Coming soon
+Template URI: 
+Description: Full Screen Coming Soon Template
+Author: Phan Tien Hien
+Author URI: 
+License: GNU General Public License version 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Version: 1.0
+
+1. Reset css
+2. Body background
+  2.1 Static full screen background
+  2.2 Image slider full screen background 
+  2.3 Video full screen background
+3. overlay
+4. Display table
+5. Logo
+6. Welcome
+7. Countdown
+8. Subscribe
+9. Infomation button
+10. About us
+11. Page not found
+12. Responsive
+
+*/
+/*
+*===========================================
+*   1. Reset css
+*===========================================
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  color: #fff;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  position: relative;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #000;
+}
+
+a {
+  color: #E34834;
+}
+
+a,
+a > * {
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+}
+
+::selection {
+  color: #1a1a1a;
+  text-shadow: none;
+  background-color: #fff;
+}
+
+::-webkit-selection {
+  color: #1a1a1a;
+  text-shadow: none;
+  background-color: #fff;
+}
+
+::-moz-selection {
+  color: #1a1a1a;
+  text-shadow: none;
+  background-color: #fff;
+}
+
+/*
+*===========================================
+*   2. Body background
+    2.1 Static full screen background
+    2.2 Image slider full screen background 
+    2.3 Video full screen background
+*===========================================
+*/
+/*
+*********************************************
+*
+* 2.1 Static full screen background
+*
+*********************************************
+*/
+.background-page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+  background-image: url(../images/bg.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: 1;
+}
+
+/*
+*********************************************
+*
+* 2.2 Image slider full screen background
+*
+*********************************************
+*/
+.slide-bg {
+  background-image: none;
+}
+
+.slide-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#slides {
+  position: relative;
+}
+
+#slides .slides-container {
+  display: none;
+}
+
+#slides .scrollable {
+  *zoom: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+
+#slides .scrollable:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.slides-navigation {
+  margin: 0 auto;
+  position: absolute;
+  z-index: 3;
+  top: 46%;
+  width: 100%;
+}
+
+.slides-navigation a {
+  position: absolute;
+  display: block;
+}
+
+.slides-navigation a.prev {
+  left: 0;
+}
+
+.slides-navigation a.next {
+  right: 0;
+}
+
+.slides-pagination {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.slides-pagination a {
+  border: 2px solid #222;
+  border-radius: 15px;
+  width: 10px;
+  height: 10px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=");
+  margin: 2px;
+  overflow: hidden;
+  text-indent: -100%;
+}
+
+.slides-pagination a.current {
+  background: #222;
+}
+
+/*
+*********************************************
+*
+* 2.3 Video full screen background
+*
+*********************************************
+*/
+.video-bg {
+  background-image: none;
+}
+
+/*
+*===========================================
+*   3. overlay
+*===========================================
+*/
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: relative;
+  overflow: auto;
+}
+
+/*
+*===========================================
+*   4. Display table
+*===========================================
+*/
+.tbl {
+  display: table;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.tbl-cell {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/*
+*===========================================
+*   5. Logo
+*===========================================
+*/
+.logo {
+  text-align: left;
+}
+
+.logo h1 {
+  margin: 0;
+}
+
+.slogan {
+  font-size: 16px;
+  letter-spacing: 0.075em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 25px 0;
+  margin-bottom: 0;
+}
+
+/*
+*===========================================
+*   6. Welcome
+*===========================================
+*/
+.welcome {
+  text-align: left;
+}
+
+.welcome h2 {
+  font-size: 39px;
+  letter-spacing: -0.05em;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.welcome h2 span {
+  color: #e34834;
+}
+
+.welcome p {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+/*
+*===========================================
+*   7. Countdown
+*===========================================
+*/
+.countdown {
+  text-align: center;
+}
+
+.is-countdown {
+  max-width: 750px;
+  margin: 0;
+  width: 100%;
+}
+
+.countdown-row {
+  display: block;
+  text-align: left;
+}
+
+.countdown-section {
+  display: block;
+  width: calc(23% - 20px);
+  margin: 10px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+.countdown-section:after {
+  content: "------------------";
+  font-family: 'Roboto';
+  font-size: 13px;
+  line-height: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  color: #fff;
+  position: absolute;
+  top: 47px;
+  right: -60%;
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.countdown-section:last-child:after {
+  display: none;
+}
+
+.countdown-amount {
+  display: block;
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  height: 60px;
+  line-height: 60px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.countdown-period {
+  display: block;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 0;
+}
+
+/*
+*===========================================
+*   8. Subscribe
+*===========================================
+*/
+.subscribe {
+  text-align: left;
+}
+
+.subscribe h1 {
+  font-size: 13px;
+  font-family: 'Roboto';
+}
+
+.subscribe h3 {
+  font-size: 15px;
+  letter-spacing: 0;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 40px 0 20px 0;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.subscribe form {
+  display: inline-block;
+  position: relative;
+}
+
+.form-control {
+  width: 340px;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0px;
+  outline: 0;
+  height: 41px;
+  padding: 6px 50px 6px 12px;
+  box-shadow: none;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  outline: 0;
+  border: 1px solid #E34834;
+}
+
+.form-control.error {
+  border: 1px solid #E34834;
+}
+
+label.error {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 7px 0;
+  color: #fff;
+  background-color: #E34834;
+  text-align: center;
+}
+
+.send-btn {
+  background: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  border: 0;
+  position: absolute;
+  top: 9px;
+  right: 15px;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.send-btn:hover {
+  color: #E34834;
+}
+
+.alert {
+  font-size: 16px;
+  line-height: 15px;
+  padding: 20px;
+}
+
+.alert-success i {
+  color: #A94442;
+  cursor: pointer;
+}
+
+/*
+*===========================================
+*   9. Infomation button
+*===========================================
+*/
+.info-button {
+  margin-bottom: 20px;
+}
+
+.info {
+  position: relative;
+  display: flex;
+  width: 72px;
+  height: 72px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  margin: -50px 0 0 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+  background: #E34834;
+}
+
+.info i {
+  font-size: 35px;
+  line-height: 43px;
+  padding: 0;
+  margin: 0;
+  z-index: 9;
+  color: #fff;
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+.info:hover {
+  background: #fff;
+}
+
+.info:hover i {
+  color: #E34834;
+}
+
+.info .icon-bg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  position: absolute;
+  top: 11px;
+  left: 9px;
+  z-index: 8;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.info:hover .icon-bg,
+.info:active .icon-bg {
+  background-color: #1a1a1a;
+}
+
+/*
+*===========================================
+*   10. About us
+*===========================================
+*/
+.about-us {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.tbl-top {
+  display: table;
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+}
+
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform 600ms ease-out;
+  -moz-transition: -moz-transform 600ms ease-out;
+  -o-transition: -o-transform 600ms ease-out;
+  transition: transform 600ms ease-out;
+  -webkit-transform: translate(100%, 0px);
+  -moz-transform: translate(100%, 0px);
+  -ms-transform: translate(100%, 0px);
+  -o-transform: translate(100%, 0px);
+  transform: translate(100%, 0px);
+}
+
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0px);
+  -moz-transform: translate(0, 0px);
+  -ms-transform: translate(0, 0px);
+  -o-transform: translate(0, 0px);
+  transform: translate(0, 0px);
+}
+
+.modal-dialog {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  background-color: #171521;
+  height: 100%;
+}
+
+.modal-header {
+  overflow: auto;
+  border: 0;
+}
+
+.modal-header span {
+  display: block;
+  float: right;
+  cursor: pointer;
+  font-size: 25px;
+  color: #8a8793;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.modal-header span:hover {
+  color: #fff;
+}
+
+.modal-content {
+  background-color: #171521;
+  box-shadow: none;
+  border: 0;
+}
+
+.about-dsc {
+  padding-bottom: 10px;
+}
+
+.about-dsc h2 {
+  font-size: 33px;
+  font-weight: 800;
+  line-height: 30px;
+  letter-spacing: -0.05em;
+}
+
+.about-dsc p {
+  font-size: 15px;
+  line-height: 27px;
+  letter-spacing: 0;
+  padding: 10px 0 0 0;
+}
+
+.about-meta h5 {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.about-meta h5 i {
+  color: #E34834;
+  margin-right: 5px;
+}
+
+.about-meta p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 27px;
+  margin-bottom: 0;
+}
+
+.about-meta p a {
+  color: #fff;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.about-meta p a:hover {
+  color: #E34834;
+}
+
+.social-media {
+  border-top: 1px solid #4b4954;
+  margin-top: 50px;
+  padding: 35px 0;
+}
+
+.social-media ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.social-media ul li {
+  display: inline-block;
+  margin: 5px;
+}
+
+.social-media ul li a {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  border: 2px solid #76747e;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  color: #fff;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.social-media ul li a:hover {
+  border: 2px solid #fff;
+}
+
+.social-media ul li i {
+  width: 35px;
+  height: 35px;
+  font-size: 18px;
+  line-height: 20px;
+  display: block;
+  font-size: 0px;
+  cursor: pointer;
+  padding: 7px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.social-media ul li i:after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: '';
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.social-media ul li i:after {
+  display: none;
+}
+
+.social-media ul li i:before {
+  speak: none;
+  font-size: 18px;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+}
+
+.social-media ul li i:hover {
+  color: #1a1a1a;
+  background-color: #fff;
+}
+
+.social-media ul li i:hover:before {
+  -webkit-animation: toTopFromBottom 0.3s forwards;
+  -moz-animation: toTopFromBottom 0.3s forwards;
+  animation: toTopFromBottom 0.3s forwards;
+}
+
+@-webkit-keyframes toTopFromBottom {
+  49% {
+    -webkit-transform: translateY(-100%);
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+  }
+
+  51% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes toTopFromBottom {
+  49% {
+    -moz-transform: translateY(-100%);
+  }
+
+  50% {
+    opacity: 0;
+    -moz-transform: translateY(100%);
+  }
+
+  51% {
+    opacity: 1;
+  }
+}
+@keyframes toTopFromBottom {
+  49% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  51% {
+    opacity: 1;
+  }
+}
+/*
+*===========================================
+*   11. Page not found
+*===========================================
+*/
+.page-not-found-bg {
+  background-image: url(http://placehold.it/1920x1080&text=1920x1080+Background+static);
+}
+
+.page-not-found {
+  text-align: center;
+}
+
+.page-not-found em {
+  color: #FFFFFF;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  margin-bottom: 0;
+  padding: 15px 0;
+  text-transform: uppercase;
+}
+
+.page-not-found h1 {
+  color: #d0d0d0;
+  font-style: normal;
+  font-size: 45px;
+  font-weight: 400;
+  letter-spacing: 0.075em;
+  margin-bottom: 0;
+  padding: 15px 0;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.page-not-found a {
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 18px;
+  padding: 5px 20px;
+  line-height: 43px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.page-not-found a:hover {
+  background: #fff;
+  color: #1a1a1a;
+  padding: 7px 30px;
+}
+
+/*
+*===========================================
+*   12. Responsive
+*===========================================
+*/
+@media screen and (max-width: 479px) {
+  .overlay {
+    overflow-x: hidden;
+  }
+
+  .about-us {
+    overflow: auto;
+  }
+
+  .logo h1 {
+    margin-top: 15px;
+  }
+
+  .logo img {
+    width: 58px;
+  }
+
+  .slogan {
+    padding: 10px 0 5px 0;
+    font-size: 12px;
+  }
+
+  .welcome h2 {
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .countdown-section {
+    width: calc(48% - 20px);
+  }
+
+  .countdown-section:nth-of-type(2):after {
+    display: none;
+  }
+
+  .col-xs-4 {
+    width: 100%;
+  }
+
+  .dash .digit {
+    font-size: 30px;
+    height: 40px;
+    line-height: 50px;
+  }
+
+  .dash:after {
+    top: 24px;
+  }
+
+  .hours_dash:after {
+    display: none;
+  }
+
+  .dash .dash_title {
+    font-size: 11px;
+  }
+
+  .form-control {
+    width: 240px;
+  }
+
+  .subscribe h3 {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+
+  .info span {
+    font-size: 40px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 639px) {
+  .overlay {
+    overflow-x: hidden;
+  }
+
+  .about-us {
+    overflow: auto;
+  }
+
+  .logo h1 {
+    margin-top: 15px;
+  }
+
+  .logo img {
+    width: 58px;
+  }
+
+  .slogan {
+    padding: 10px 0 5px 0;
+    font-size: 12px;
+  }
+
+  .welcome h2 {
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .col-xs-4 {
+    width: 100%;
+  }
+
+  .dash .digit {
+    font-size: 30px;
+    height: 40px;
+    line-height: 50px;
+  }
+
+  .dash:after {
+    top: 24px;
+  }
+
+  .dash .dash_title {
+    font-size: 11px;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .form-control {
+    width: 360px;
+  }
+
+  .subscribe h3 {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+
+  .info span {
+    font-size: 40px;
+  }
+}
+@media screen and (min-width: 640px) and (max-width: 767px) {
+  .overlay {
+    overflow-x: hidden;
+  }
+
+  .about-us {
+    overflow: auto;
+  }
+
+  .logo h1 {
+    margin-top: 15px;
+  }
+
+  .logo img {
+    width: 58px;
+  }
+
+  .slogan {
+    padding: 10px 0 5px 0;
+    font-size: 12px;
+  }
+
+  .welcome h2 {
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .dash .digit {
+    font-size: 30px;
+    height: 40px;
+    line-height: 50px;
+  }
+
+  .dash:after {
+    top: 24px;
+  }
+
+  .dash .dash_title {
+    font-size: 11px;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .form-control {
+    width: 360px;
+  }
+
+  .subscribe h3 {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+
+  .info span {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .welcome,
+  .countdown,
+  .countdown-row,
+  .subscribe,
+  .info-button,
+  .subscribe h3 {
+    text-align: center;
+  }
+
+  .is-countdown {
+    margin: 0 auto;
+  }
+
+  .countdown {
+    margin-left: auto !important;
+  }
+
+  .modal-dialog {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .about-us {
+    overflow: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .overlay {
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 769px) {
+  .welcome,
+  .logo,
+  .countdown,
+  .subscribe,
+  .info-button {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .info-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
